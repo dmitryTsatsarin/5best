@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from main.models import UserGroup
+from django.contrib import auth
 
 def index(request):
     groups = UserGroup.objects.filter()
@@ -21,3 +22,12 @@ def profile(request, id):
 
 def group(request, id):
     return render_to_response('group.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return render_to_response('logout.html')
+
+
+def login(request):
+    return render_to_response('login.html')

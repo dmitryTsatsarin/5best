@@ -3344,7 +3344,11 @@ form.profile-pic-form {
         <div class="page-top-header">
             <div class="page-header-content center relative">
                 <h2>5 best</h2>
-                <a href="#" class="login-btn flat-btn">Signup</a>
+                {% if not user.is_authenticated %}
+                    <a href="{% url account_login %}" class="login-btn flat-btn">Sign in</a>
+                {% else %}
+                    <a href="{% url account_logout %}" class="login-btn flat-btn">Sign out</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -3357,8 +3361,10 @@ form.profile-pic-form {
 
         <div class="lists-nav secondary-nav font-round">
             <a href="{% url index %}" class="gradient border-box  selected">Questions</a>
-            <a href="#" class="gradient border-box">Group</a>
-            <a href="{% url dashboard %}" class="gradient border-box last">Dashboard</a>
+            <a href="#" class="gradient border-box {% if not user.is_authenticated %}last{% endif %}">Group</a>
+            {% if user.is_authenticated %}
+                <a href="{% url dashboard %}" class="gradient border-box last">Dashboard</a>
+            {% endif %}
         </div>
 
         {% block content %}
