@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+    <div class="lists-container group pagination-group">
+    {% if groups %}
+        {% for group in groups %}
+            <div class="list-bundle box">
+                <h1><a href="#" class="">{{ group.group.name }}</a></h1>
+                <ul>
+                    {% for proposal in group.proposals.all %}
+                        <li>{{proposal}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}

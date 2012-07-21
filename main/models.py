@@ -6,16 +6,25 @@ from django.db import models
 class Group(models.Model):
     name = models.CharField(max_length = 255, unique = True)
 
+    def __unicode__(self):
+        return self.name
+
 admin.site.register(Group)
 
 class Proposal(models.Model):
     name = models.CharField(max_length=255, unique = True)
+
+    def __unicode__(self):
+        return self.name
 
 admin.site.register(Proposal)
 
 class UserProposal(models.Model):
     proposal = models.ForeignKey(Proposal)
     placenumber = models.PositiveIntegerField()
+
+    def __unicode__(self):
+        return self.proposal.name
 
 admin.site.register(UserProposal)
 
