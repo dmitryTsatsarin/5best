@@ -3,18 +3,11 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-    <div class="lists-container group pagination-group">
+    <h1>Profile page {{ profile.username }}</h1>
+    <br/>
 
-        <div class="list-bundle box">
-            <h1><a href="#" class="">The best bend in the city</a></h1>
-            <ul>
-                <li>Variant 1</li>
-                <li>Variant 2</li>
-                <li>Variant 3</li>
-                <li>Variant 4</li>
-                <li>Variant 5</li>
-            </ul>
-        </div>
-
-    </div>
+    {% for group in groups %}
+        {% include "includes/profileblock.html" %}
+    {% endfor %}
+    <br/>
 {% endblock %}

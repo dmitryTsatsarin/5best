@@ -1,0 +1,30 @@
+<h1>{{ group.group.name }} ({{ group.proposals.all.count }}&nbsp;items)</h1>
+
+<div class="todo-group" id="todo-items">
+    {% for proposal in group.proposals.all %}
+        <div class="todo clickable valign">
+        <div class="todo-content">
+            <div class="todo-details">
+                <h2 class="nowrap breakword font-round">{{proposal}}</h2>
+            </div>
+        </div>
+
+        <ul class="btn-group">
+            <li class="">
+                <a class="like-btn btn inline-block btn-pill gradient" data-id="4f79f2b0ca1cce1556a86d5d"
+                   data-action="add"
+                   data-type="TODO" data-variant="todoItem">
+                    <span class="num-likes ">3</span><i class="heart"></i>
+                </a>
+            </li>
+            <li class="">
+                <a href="/_turl/?code=1&amp;id=4f79f2b0ca1cce1556a86d5d#comments"
+                   class="comment-btn btn inline-block btn-pill gradient">
+                    <span class="num-comments ">1</span><i class="comment"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+<br/>
