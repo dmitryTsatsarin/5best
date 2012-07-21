@@ -6,7 +6,7 @@
     <h1>Profile page {{ profile.username }}</h1>
     <br/>
 
-    {% for group in groups %}
+    {% for groupobj in groups %}
         {% include "includes/profileblock.html" %}
     {% endfor %}
     <br/>

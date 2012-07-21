@@ -1,7 +1,7 @@
-<h1>{{ group.group.name }} ({{ group.proposals.all.count }}&nbsp;items)</h1>
+<h1>{{ groupobj.group.name}} ({{ groupobj.proposals.all.count }}&nbsp;items)</h1>
 
 <div class="todo-group" id="todo-items">
-    {% for proposal in group.proposals.all %}
+    {% for proposal in groupobj.proposals.all %}
         <div class="todo clickable valign">
         <div class="todo-content">
             <div class="todo-details">
@@ -9,9 +9,9 @@
             </div>
         </div>
 
-        <ul class="btn-group">
+        {% comment %}<ul class="btn-group">
             <li class="">
-                <a class="like-btn btn inline-block btn-pill gradient" data-id="4f79f2b0ca1cce1556a86d5d"
+                <a class="like-btn btn inline-block btn-pill gradient"
                    data-action="add"
                    data-type="TODO" data-variant="todoItem">
                     <span class="num-likes ">3</span><i class="heart"></i>
@@ -23,7 +23,7 @@
                     <span class="num-comments ">1</span><i class="comment"></i>
                 </a>
             </li>
-        </ul>
+        </ul>{% endcomment %}
     </div>
     {% endfor %}
 </div>
